@@ -16,7 +16,7 @@ In this project we will detect lane lines in images using Python and OpenCV.
 
 ### The following techniques are used in the project.
 
-## Color Selection
+### Color Selection
 
 - Grayscaling
 
@@ -29,6 +29,18 @@ This is an important first step in differentiating the lane lines from other obj
 The above grayscale images have many rough edges which causes many noisy edges to be detected. I used "cv2.GaussianBlur" to smooth out edges.
 
 <img src="test_images_output/myWhiteCarLaneSwitchBlurGrayOutput.jpg" width="480" alt="Combined Image" />
+
+- Canny Edge Detection
+
+Now I applied the Canny transform on the grayscale image with gaussian smoothing. We apply this transform in order to obtain the sharp edges of different objects in the image. 
+
+<img src="test_images_output/myWhiteCarLaneSwitchCannyImageOutput.jpg" width="480" alt="Combined Image" />
+
+- Region of Interest Selection
+
+We need to isolate the edges for the left and right lanes from other objects in the image. In order to do this, we use "cv2.fillPoly" along with "cv2.bitwise_and" to isolate the portion of the image which is of interest to us. 
+
+<img src="test_images_output/myWhiteCarLaneSwitchmaskedImageOutput.jpg" width="480" alt="Combined Image" />
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
 
