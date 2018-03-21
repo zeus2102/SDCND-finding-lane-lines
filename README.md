@@ -52,7 +52,8 @@ In the previous image, we see that multiple lines are detected. In order to draw
 
 ### Video Clips
 
-The resultant video clips can be found in [test_videos_output](https://github.com/zeus2102/SDCND-finding-lane-lines/tree/lane-lines-dev/test_videos_output) folder.
+We draw lane lines on video clips using our detection techniques. The video inputs are in [test_videos](https://github.com/zeus2102/SDCND-finding-lane-lines/tree/lane-lines-dev/test_videos) folder. 
+The output video clips can be found in [test_videos_output](https://github.com/zeus2102/SDCND-finding-lane-lines/tree/lane-lines-dev/test_videos_output) folder.
 
 
 ### Conclusion
