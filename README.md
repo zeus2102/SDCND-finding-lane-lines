@@ -58,6 +58,6 @@ The output video clips can be found in [test_videos_output](https://github.com/z
 
 ### Conclusion
 
-A possible improvement would be to ...
+The project was successful in simple lane detection using various computer vision techniques. The test images and videos with mostly straight and distinct lane images, helped with computation of the correct lines. Highly curved lines and steep road angles will pose more difficult challenges for lane detection in its current design. 
 
-Another potential improvement could be to ...
+A possible improvement would be that we are able to detect how far the lane detection should extend on the road. This will help in case of steep or hilly road conditions. The color detection for the images also has scope for improvement in the current design. We can further isolate the lines by only detecting the colors (namely white and yellow) which are important in detecting the right lane lines in the image. 
