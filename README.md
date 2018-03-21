@@ -22,7 +22,7 @@ This is an important first step in differentiating the lane lines from other obj
 
 ### Gaussian Smoothing (Gaussian Blur)
 
-The above grayscale images have many rough edges which causes many noisy edges to be detected. I used "cv2.GaussianBlur" to smooth out edges.
+The above grayscale images have many rough edges which causes numerous noisy edges to be detected. I used "cv2.GaussianBlur" to smooth out edges.
 
 <img src="test_images_output/myWhiteCarLaneSwitchBlurGrayOutput.jpg" width="480" alt="Combined Image" />
 
@@ -46,45 +46,18 @@ I used Hough transform on the lane edge images to detect the lane lines.
 
 ### Extrapolating Lane Lines
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+In the previous image, we see that multiple lines are detected. In order to draw a single line on the left and right lanes, we need to average and extrapolate over the detected line segments. We seperate line segments by their slope ((y2-y1)/(x2-x1)) to decide which segments are part of the left line vs. the right line and take the averages.
+
+<img src="test_images_output/myWhiteCarLaneSwitchOutput.jpg" width="480" alt="Combined Image" />
+
+### Video Clips
+
+We draw lane lines on video clips using our detection techniques. The video inputs are in [test_videos](https://github.com/zeus2102/SDCND-finding-lane-lines/tree/lane-lines-dev/test_videos) folder. 
+The output video clips can be found in [test_videos_output](https://github.com/zeus2102/SDCND-finding-lane-lines/tree/lane-lines-dev/test_videos_output) folder.
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### Conclusion
 
+The project was successful in simple lane detection using various computer vision techniques. The test images and videos with mostly straight and distinct lane images, helped with computation of the correct lines. Highly curved lines and steep road angles will pose more difficult challenges for lane detection in its current design. 
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
-
-### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
-
-
-
-Creating a Great Writeup
----
-For this project, a great writeup should provide a detailed response to the "Reflection" section of the [project rubric](https://review.udacity.com/#!/rubrics/322/view). There are three parts to the reflection:
-
-1. Describe the pipeline
-
-2. Identify any shortcomings
-
-3. Suggest possible improvements
-
-We encourage using images in your writeup to demonstrate how your pipeline works.  
-
-All that said, please be concise!  We're not looking for you to write a book here: just a brief description.
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup. Here is a link to a [writeup template file](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md). 
-
-
-
-
-
-
-
-
+A possible improvement would be that we are able to detect how far the lane detection should extend on the road. This will help in case of steep or hilly road conditions. The color detection for the images also has scope for improvement in the current design. We can further isolate the lines by only detecting the colors (namely white and yellow) which are important in detecting the right lane lines in the image. 
