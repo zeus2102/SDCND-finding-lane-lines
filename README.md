@@ -52,7 +52,7 @@ In the previous image, we see that multiple lines are detected. In order to draw
 
 ### Video Clips
 
-The resultant video clips can be found in [SDCND-finding-lane-lines/test_videos_output/] folder.
+The resultant video clips can be found in ![test_videos_output](https://github.com/zeus2102/SDCND-finding-lane-lines/tree/lane-lines-dev/test_videos_output) folder.
 
 
 ### Conclusion
