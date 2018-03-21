@@ -22,7 +22,7 @@ This is an important first step in differentiating the lane lines from other obj
 
 ### Gaussian Smoothing (Gaussian Blur)
 
-The above grayscale images have many rough edges which causes many noisy edges to be detected. I used "cv2.GaussianBlur" to smooth out edges.
+The above grayscale images have many rough edges which causes numerous noisy edges to be detected. I used "cv2.GaussianBlur" to smooth out edges.
 
 <img src="test_images_output/myWhiteCarLaneSwitchBlurGrayOutput.jpg" width="480" alt="Combined Image" />
 
@@ -46,45 +46,17 @@ I used Hough transform on the lane edge images to detect the lane lines.
 
 ### Extrapolating Lane Lines
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+In the previous image, we see that multiple lines are detected. In order to draw a single line on the left and right lanes, we need to average and extrapolate over the detected line segments. We seperate line segments by their slope ((y2-y1)/(x2-x1)) to decide which segments are part of the left line vs. the right line and take the averages.
+
+<img src="test_images_output/myWhiteCarLaneSwitchOutput.jpg" width="480" alt="Combined Image" />
+
+### Video Clips
+
+The resultant video clips can be found in [SDCND-finding-lane-lines/test_videos_output/] folder.
 
 
-### 2. Identify potential shortcomings with your current pipeline
-
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
-
-### 3. Suggest possible improvements to your pipeline
+### Conclusion
 
 A possible improvement would be to ...
 
 Another potential improvement could be to ...
-
-
-
-Creating a Great Writeup
----
-For this project, a great writeup should provide a detailed response to the "Reflection" section of the [project rubric](https://review.udacity.com/#!/rubrics/322/view). There are three parts to the reflection:
-
-1. Describe the pipeline
-
-2. Identify any shortcomings
-
-3. Suggest possible improvements
-
-We encourage using images in your writeup to demonstrate how your pipeline works.  
-
-All that said, please be concise!  We're not looking for you to write a book here: just a brief description.
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup. Here is a link to a [writeup template file](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md). 
-
-
-
-
-
-
-
-
